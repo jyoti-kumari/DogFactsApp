@@ -13,9 +13,4 @@ target 'DogsFact' do
     # Pods for testing
     pod 'iOSSnapshotTestCase'
   end
-
-  target 'DogsFactUITests' do
-    # Pods for testing
-  end
-
 end
