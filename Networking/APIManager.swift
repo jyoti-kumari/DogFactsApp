@@ -1,18 +1,18 @@
 import Foundation
 import PromiseKit
 
-public final class URLSessionHTTPClient: HTTPClient {
+public final class APIManager: ServiceProtocol {
   private let session: URLSessionProtocol
   
   init(session: URLSessionProtocol = URLSession.shared) {
     self.session = session
   }
   
-  // MARK: - HTTP Client
+  // MARK: - Request func
     func request<T: Decodable>(_ service: RequestProtocol, responseType: T.Type) -> Promise<T> {
         return Promise { seal in
             guard let url = buildURL(from: service) else {
-                seal.reject(URLSessionHTTPClientError.invalidURL)
+                seal.reject(APIError.invalidURL)
                 return
             }
             session.dataTaskWithURL(url) { data, response, error in
@@ -37,10 +37,11 @@ private func buildURL(from service: RequestProtocol) -> URL? {
 }
 
 // MARK: - Response handlers
-extension URLSessionHTTPClient {
+
+extension APIManager {
     internal static func handleResponseData<T: Decodable>(_ data: Data?, responseType: T.Type, seal: Resolver<T>) {
         guard let data = data else {
-            seal.reject(URLSessionHTTPClientError.noData)
+            seal.reject(APIError.noData)
             return
         }
         do {
@@ -48,7 +49,7 @@ extension URLSessionHTTPClient {
             let responseObject = try decoder.decode(T.self, from: data)
             seal.fulfill(responseObject)
         } catch {
-            seal.reject(URLSessionHTTPClientError.decodingError)
+            seal.reject(APIError.decodingError)
         }
     }
 }

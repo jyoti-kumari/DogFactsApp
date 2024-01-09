@@ -10,17 +10,17 @@ import PromiseKit
 
 final internal class DogFactsRemoteRepository: DogFactsRepository {
     
-    private let httpClient: HTTPClient
+    private let apiService: ServiceProtocol
     private let api: DogFactsAPI
     
-    internal init(httpClient: HTTPClient, api: DogFactsAPI) {
-        self.httpClient = httpClient
+    internal init(apiService: ServiceProtocol, api: DogFactsAPI) {
+        self.apiService = apiService
         self.api = api
     }
     
     func getRandomFact() -> Promise<DogFactData> {
         return Promise { seal in
-            self.httpClient.request(getRequest(), responseType: DogFactDTO.self)
+            self.apiService.request(getRequest(), responseType: DogFactDTO.self)
                 .done { response in
                     seal.fulfill(response.toData)
                 }

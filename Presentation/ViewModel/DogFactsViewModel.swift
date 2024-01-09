@@ -8,7 +8,15 @@
 import Foundation
 import PromiseKit
 
-final class DogFactsViewModel {
+protocol DogFactsViewModelProtocol {
+    var factMessage:Observable<String> { get }
+    var errorMessage: Observable<String> { get }
+    func getTitle() -> String
+    func fetchRandomFact()
+    func onUserInput()
+}
+
+final class DogFactsViewModel: DogFactsViewModelProtocol {
     
     // MARK: - Dependencies
     
@@ -16,40 +24,32 @@ final class DogFactsViewModel {
     
     // MARK: - Properties
     
-    private let onSuccess: (_ factValue: String) -> Void
-    private let onError: (_ errorMessage: String) -> Void
+    var factMessage:Observable<String> = Observable("")
+    var errorMessage: Observable<String> = Observable("")
     
     // MARK: - Initialization
     
-    init(dogFactsUseCase: GetDogFactsUseCaseProtocol, onSuccess: @escaping (_: String) -> Void, onError: @escaping (_: String) -> Void) {
+    init(dogFactsUseCase: GetDogFactsUseCaseProtocol) {
         self.dogFactsUseCase = dogFactsUseCase
-        self.onSuccess = onSuccess
-        self.onError = onError
     }
     
     // MARK: - Public Methods
     
+    func getTitle() -> String {
+        return NAConstants.title
+    }
+    
     func fetchRandomFact() {
         dogFactsUseCase.execute()
             .done { [weak self] data in
-                self?.onSuccess(data.factMessage)
+                self?.factMessage.value = data.factMessage
             }
             .catch { error in
-                self.onError(error.localizedDescription)
+                self.errorMessage.value = error.localizedDescription
             }
     }
-}
-
-extension DogFactsViewModel {
-    enum UserInput {
-        case fetchFactClicked
-    }
     
-    func onUserInput(_ input: UserInput) {
-        switch input {
-        case .fetchFactClicked:
-            fetchRandomFact()
-        }
+    func onUserInput() {
+        fetchRandomFact()
     }
-    
 }

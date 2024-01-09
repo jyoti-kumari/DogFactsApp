@@ -20,13 +20,13 @@ class DogFactsViewModelTest: XCTestCase {
             if let error = error {
                 return Promise(error: error)
             }
-            guard let response = apiResponse else { return Promise(error: URLSessionHTTPClientError.noData) }
+            guard let response = apiResponse else { return Promise(error: APIError.noData) }
             return Promise.value(response)
         }
     }
     
     override func setUp() {
-        viewModel = DogFactsViewModel(dogFactsUseCase: MockGetDogFactUseCase(), onSuccess: { [weak self] in self?.onSuccess(factMessage: $0) }, onError: { [weak self] in self?.onError(errorMessage: $0) })
+        viewModel = DogFactsViewModel(dogFactsUseCase: MockGetDogFactUseCase())
     }
     
     override func tearDown() {

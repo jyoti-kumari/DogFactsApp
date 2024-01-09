@@ -1,5 +1,5 @@
 //
-//  HTTPClient.swift
+//  APIService.swift
 //  DogsFact
 //
 //  Created by Jyoti Kumari on 02/01/24.
@@ -8,8 +8,7 @@
 import Foundation
 import PromiseKit
 
-protocol HTTPClient {
-   // func request<T: Decodable>(_ url: URL, responseType: T.Type) -> Promise<T>
+protocol ServiceProtocol {
    func request<T: Decodable>(_ request: RequestProtocol, responseType: T.Type) -> Promise<T>
 }
 
@@ -38,8 +37,8 @@ class BaseRequest: RequestProtocol {
     var apiKey: String = ""
 
     init() {
-        self.additionalHeaders = ["Content-Type": "application/json"]
-        if let apiKey = Bundle.main.infoDictionary?["ApiKey"] as? String {
+        self.additionalHeaders = [URLConstants.additionalHeadersKey : URLConstants.additionalHeaders]
+        if let apiKey = Bundle.main.infoDictionary?[URLConstants.apiKey] as? String {
             self.apiKey = apiKey
         }
     }

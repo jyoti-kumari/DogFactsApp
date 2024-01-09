@@ -1,16 +1,15 @@
 //
-//  URLSessionHTTPClientTest.swift
+//  DogFactsRemoteRepositoryTest.swift
 //  DogsFactTests
 //
-//  Created by Jyoti Kumari on 04/01/24.
+//  Created by Jyoti Kumari on 09/01/24.
 //
 
 import XCTest
 import PromiseKit
 @testable import DogsFact
 
-class URLSessionHTTPClientTest: XCTestCase {
-    
+class DogFactsRemoteRepositoryTest: XCTestCase {
     var session: MockURLSession!
     
     override func setUp() {
@@ -22,25 +21,26 @@ class URLSessionHTTPClientTest: XCTestCase {
         session = nil
         super.tearDown()
     }
+    
     // Test successful API request
     func testAPIRequestSuccess() {
         // Given
         
         session.data = """
             {
-                "title": "Test ",
-                "description": "This is a description"
+                "facts": [
+                    "Puppies then take a year or more to gain the other half of their body weight."
+                ],
+                "success": true
             }
             """.data(using: .utf8)
         
-        let sessionManager = URLSessionHTTPClient(session: session)
-        
-        let request = MockRequest()
+        let sessionManager = APIManager(session: session)
+        let dogFactsRemoteRepo = DogFactsRemoteRepository(apiService: sessionManager, api: .test)
         
         // When
         let expectation = XCTestExpectation(description: "API request")
-        let promise: Promise<MockResponse> = sessionManager.request(request, responseType: MockResponse.self)
-        
+        let promise: Promise<DogFactData> = dogFactsRemoteRepo.getRandomFact()
         promise.done { response in
             // Then
             XCTAssertNotNil(response)
@@ -59,12 +59,12 @@ class URLSessionHTTPClientTest: XCTestCase {
         
         session.error = mockError
         
-        let sessionManager = URLSessionHTTPClient(session: session)
-        let request = MockRequest()
+        let sessionManager = APIManager(session: session)
+        let dogFactsRemoteRepo = DogFactsRemoteRepository(apiService: sessionManager, api: .test)
         
         // When
         let expectation = XCTestExpectation(description: "API request")
-        let promise: Promise<MockResponse> = sessionManager.request(request, responseType: MockResponse.self)
+        let promise: Promise<DogFactData> = dogFactsRemoteRepo.getRandomFact()
         
         promise.done { _ in
             XCTFail("Promise should not fulfill")
@@ -82,19 +82,19 @@ class URLSessionHTTPClientTest: XCTestCase {
         
         session.data = nil
         
-        let sessionManager = URLSessionHTTPClient(session: session)
-        let request = MockRequest()
+        let sessionManager = APIManager(session: session)
+        let dogFactsRemoteRepo = DogFactsRemoteRepository(apiService: sessionManager, api: .test)
         
         // When
         let expectation = XCTestExpectation(description: "API request with no data")
-        let promise: Promise<MockResponse> = sessionManager.request(request, responseType: MockResponse.self)
+        let promise: Promise<DogFactData> = dogFactsRemoteRepo.getRandomFact()
         
         promise.done { _ in
             XCTFail("Promise should not fulfill")
         }.catch { error in
             // Then
-            XCTAssertTrue(error is URLSessionHTTPClientError)
-            XCTAssertEqual(error as? URLSessionHTTPClientError, URLSessionHTTPClientError.noData)
+            XCTAssertTrue(error is APIError)
+            XCTAssertEqual(error as? APIError, APIError.noData)
             expectation.fulfill()
         }
         
@@ -111,19 +111,19 @@ class URLSessionHTTPClientTest: XCTestCase {
         
         session.data = mockData
         
-        let sessionManager = URLSessionHTTPClient(session: session)
-        let request = MockRequest()
+        let sessionManager = APIManager(session: session)
+        let dogFactsRemoteRepo = DogFactsRemoteRepository(apiService: sessionManager, api: .test)
         
         // When
         let expectation = XCTestExpectation(description: "API request with decoding error")
-        let promise: Promise<MockResponse> = sessionManager.request(request, responseType: MockResponse.self)
+        let promise: Promise<DogFactData> = dogFactsRemoteRepo.getRandomFact()
         
         promise.done { _ in
             XCTFail("Promise should not fulfill")
         }.catch { error in
             // Then
-            XCTAssertTrue(error is URLSessionHTTPClientError)
-            XCTAssertEqual(error as? URLSessionHTTPClientError, URLSessionHTTPClientError.decodingError)
+            XCTAssertTrue(error is APIError)
+            XCTAssertEqual(error as? APIError, APIError.decodingError)
             expectation.fulfill()
         }
         
@@ -132,18 +132,14 @@ class URLSessionHTTPClientTest: XCTestCase {
 }
 
 // Mock implementations for testing
-extension URLSessionHTTPClientTest {
-    struct MockRequest: RequestProtocol {
-        var requestQueryParam: String = ""
-        var apiKey: String = ""
-        var httpMethod: DogsFact.HTTPMethod = .get
-        var requestParams: [String: Any]?
-        var additionalHeaders: [String: String]?
-        let requestURL: String = ""
+extension DogFactsRemoteRepositoryTest {
+    struct MockEnvironment {
+        var api: DogFactsAPI = DogFactsAPI(environment: "" as! Environment)
     }
-    
-    struct MockResponse: Decodable {
-        var title: String = ""
-        var description: String = ""
+}
+
+extension DogFactsAPI {
+    static var test: Self {
+        DogFactsAPI(environment: DogFactsEnvironment())
     }
 }

@@ -36,5 +36,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22F39837-4329-4CCC-95A4-48F6620C9D69"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogsFactTests/Domain/Network/APIManagerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "testAPIRequestSuccess()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "22F39837-4329-4CCC-95A4-48F6620C9D69 - ed40091ae40f1f5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogsFactTests.APIManagerTest.testAPIRequestSuccess() -&gt; ()"
+                  moduleName = "DogsFactTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyokumar1/Desktop/Llyods/DogFacts/DogsFactTests/Domain/Network/APIManagerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1044">
+               </Location>
+               <Location
+                  uuid = "22F39837-4329-4CCC-95A4-48F6620C9D69 - ed40091ae40f1f5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogsFactTests.APIManagerTest.testAPIRequestSuccess() -&gt; ()"
+                  moduleName = "DogsFactTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyokumar1/Desktop/Llyods/DogFacts/DogsFactTests/Domain/Network/APIManagerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1024">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

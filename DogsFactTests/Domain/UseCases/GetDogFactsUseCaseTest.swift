@@ -22,7 +22,7 @@ class GetDogFactsUseCaseTest: XCTestCase {
             if let factsApiResponse = apiResponse {
                 return Promise.value(factsApiResponse)
             }
-            return Promise(error: URLSessionHTTPClientError.noData) // Default to no data
+            return Promise(error: APIError.noData) // Default to no data
         }
     }
     
@@ -100,8 +100,8 @@ class GetDogFactsUseCaseTest: XCTestCase {
             XCTFail("Promise should not fulfill")
         }.catch { error in
             // Then
-            XCTAssertTrue(error is URLSessionHTTPClientError)
-            XCTAssertEqual(error as? URLSessionHTTPClientError, URLSessionHTTPClientError.noData)
+            XCTAssertTrue(error is APIError)
+            XCTAssertEqual(error as? APIError, APIError.noData)
             expectation.fulfill()
         }
         
