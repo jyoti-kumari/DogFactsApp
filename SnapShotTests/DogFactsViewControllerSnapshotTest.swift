@@ -19,7 +19,6 @@ final class DogFactsViewControllerSnapshotTest: FBSnapshotTestCase {
     }
     
     func testDogFactsViewController() {
-        let mockApiResponse = MockResponseManager.loadMockResponse(ofType: DogFactDTO.self, from: "DogFact")
         let dogFactsVC: DogFactsViewController = ViewControllerFactory.createDogFactsViewController()
         FBSnapshotVerifyView(dogFactsVC.view)
     }
