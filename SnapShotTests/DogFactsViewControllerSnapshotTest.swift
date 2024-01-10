@@ -16,6 +16,9 @@ final class DogFactsViewControllerSnapshotTest: FBSnapshotTestCase {
         // self.recordMode = true
         bundleResourcePath = FileManager.default.temporaryDirectory.appendingPathComponent("ReferenceImages").path
         recordMode = false
+        fileNameOptions = [
+            FBSnapshotTestCaseFileNameIncludeOption.none
+        ]
     }
     
     func testDogFactsViewController() {
