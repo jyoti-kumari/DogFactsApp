@@ -19,13 +19,11 @@
 		FD0C7A642B44698800BAAA1E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A632B44698800BAAA1E /* APIError.swift */; };
 		FD0C7A662B446A0200BAAA1E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A652B446A0200BAAA1E /* APIManager.swift */; };
 		FD0C7A682B446D4300BAAA1E /* DogFactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A672B446D4300BAAA1E /* DogFactData.swift */; };
-		FD0C7A6B2B446D8500BAAA1E /* DogFactError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A6A2B446D8500BAAA1E /* DogFactError.swift */; };
-		FD0C7A6D2B446DB700BAAA1E /* DogFactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A6C2B446DB700BAAA1E /* DogFactsRepository.swift */; };
 		FD0C7A702B446E5000BAAA1E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A6F2B446E5000BAAA1E /* Environment.swift */; };
 		FD0C7A722B446E7C00BAAA1E /* DogFactsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A712B446E7C00BAAA1E /* DogFactsAPI.swift */; };
 		FD0C7A742B446F7F00BAAA1E /* DogFactsAPI+MappingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A732B446F7F00BAAA1E /* DogFactsAPI+MappingExtension.swift */; };
 		FD0C7A762B44700100BAAA1E /* DogFactDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A752B44700100BAAA1E /* DogFactDTO.swift */; };
-		FD0C7A782B44704600BAAA1E /* DogFactsRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A772B44704600BAAA1E /* DogFactsRemoteRepository.swift */; };
+		FD0C7A782B44704600BAAA1E /* DogFactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A772B44704600BAAA1E /* DogFactsRepository.swift */; };
 		FD0C7A7B2B452A6900BAAA1E /* DogFactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A7A2B452A6900BAAA1E /* DogFactsViewModel.swift */; };
 		FD0C7A7D2B452C6100BAAA1E /* DogFactsAPI+EnvironmentInstanceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A7C2B452C6100BAAA1E /* DogFactsAPI+EnvironmentInstanceExtension.swift */; };
 		FD0C7A8B2B45844300BAAA1E /* GetDogFactsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7A8A2B45844300BAAA1E /* GetDogFactsUseCase.swift */; };
@@ -40,9 +38,11 @@
 		FD0C7AA82B46FC0F00BAAA1E /* APIManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7AA72B46FC0F00BAAA1E /* APIManagerTest.swift */; };
 		FD0C7AAC2B46FFFE00BAAA1E /* MockUrlSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7AAB2B46FFFE00BAAA1E /* MockUrlSession.swift */; };
 		FD0C7AAF2B4701C800BAAA1E /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C7AAD2B47015100BAAA1E /* URLSessionProtocol.swift */; };
+		FD2B64652B4E906200CCAFB9 /* DogFactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B64642B4E906200CCAFB9 /* DogFactsService.swift */; };
+		FD2B64682B4EC75D00CCAFB9 /* DogFactsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B64672B4EC75D00CCAFB9 /* DogFactsServiceTest.swift */; };
+		FD2B646A2B4ECB6100CCAFB9 /* DogFactsAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B64692B4ECB6100CCAFB9 /* DogFactsAPITest.swift */; };
 		FDBE15632B4BDE8600D9FD31 /* DogFact.json in Resources */ = {isa = PBXBuildFile; fileRef = FD0C7A7F2B457FC700BAAA1E /* DogFact.json */; };
-		FDBE15652B4C16B000D9FD31 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE15642B4C16B000D9FD31 /* Observable.swift */; };
-		FDBE15672B4CF8A700D9FD31 /* DogFactsRemoteRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE15662B4CF8A700D9FD31 /* DogFactsRemoteRepositoryTest.swift */; };
+		FDBE15672B4CF8A700D9FD31 /* DogFactsRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE15662B4CF8A700D9FD31 /* DogFactsRepositoryTest.swift */; };
 		FDBE156B2B4D196B00D9FD31 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE156A2B4D196B00D9FD31 /* Request.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,13 +79,11 @@
 		FD0C7A632B44698800BAAA1E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		FD0C7A652B446A0200BAAA1E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FD0C7A672B446D4300BAAA1E /* DogFactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactData.swift; sourceTree = "<group>"; };
-		FD0C7A6A2B446D8500BAAA1E /* DogFactError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactError.swift; sourceTree = "<group>"; };
-		FD0C7A6C2B446DB700BAAA1E /* DogFactsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsRepository.swift; sourceTree = "<group>"; };
 		FD0C7A6F2B446E5000BAAA1E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		FD0C7A712B446E7C00BAAA1E /* DogFactsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsAPI.swift; sourceTree = "<group>"; };
 		FD0C7A732B446F7F00BAAA1E /* DogFactsAPI+MappingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DogFactsAPI+MappingExtension.swift"; sourceTree = "<group>"; };
 		FD0C7A752B44700100BAAA1E /* DogFactDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactDTO.swift; sourceTree = "<group>"; };
-		FD0C7A772B44704600BAAA1E /* DogFactsRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsRemoteRepository.swift; sourceTree = "<group>"; };
+		FD0C7A772B44704600BAAA1E /* DogFactsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsRepository.swift; sourceTree = "<group>"; };
 		FD0C7A7A2B452A6900BAAA1E /* DogFactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsViewModel.swift; sourceTree = "<group>"; };
 		FD0C7A7C2B452C6100BAAA1E /* DogFactsAPI+EnvironmentInstanceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DogFactsAPI+EnvironmentInstanceExtension.swift"; sourceTree = "<group>"; };
 		FD0C7A7F2B457FC700BAAA1E /* DogFact.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DogFact.json; sourceTree = "<group>"; };
@@ -101,8 +99,10 @@
 		FD0C7AA72B46FC0F00BAAA1E /* APIManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTest.swift; sourceTree = "<group>"; };
 		FD0C7AAB2B46FFFE00BAAA1E /* MockUrlSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlSession.swift; sourceTree = "<group>"; };
 		FD0C7AAD2B47015100BAAA1E /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
-		FDBE15642B4C16B000D9FD31 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		FDBE15662B4CF8A700D9FD31 /* DogFactsRemoteRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsRemoteRepositoryTest.swift; sourceTree = "<group>"; };
+		FD2B64642B4E906200CCAFB9 /* DogFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsService.swift; sourceTree = "<group>"; };
+		FD2B64672B4EC75D00CCAFB9 /* DogFactsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsServiceTest.swift; sourceTree = "<group>"; };
+		FD2B64692B4ECB6100CCAFB9 /* DogFactsAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsAPITest.swift; sourceTree = "<group>"; };
+		FDBE15662B4CF8A700D9FD31 /* DogFactsRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFactsRepositoryTest.swift; sourceTree = "<group>"; };
 		FDBE156A2B4D196B00D9FD31 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +193,7 @@
 		FD0C7A462B445C6800BAAA1E /* DogsFactTests */ = {
 			isa = PBXGroup;
 			children = (
+				FD0C7A9D2B46CB7100BAAA1E /* Network */,
 				FDBE15682B4CF8AE00D9FD31 /* Data */,
 				FD0C7A7E2B457F2D00BAAA1E /* Resources */,
 				FD0C7AA02B46CF7A00BAAA1E /* Presentation */,
@@ -233,9 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0C7A672B446D4300BAAA1E /* DogFactData.swift */,
-				FD0C7A6A2B446D8500BAAA1E /* DogFactError.swift */,
 				FD0C7A892B45837D00BAAA1E /* UseCase */,
-				FD0C7A862B45820D00BAAA1E /* Repository */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -245,6 +244,7 @@
 			children = (
 				FD0C7A832B4580DC00BAAA1E /* Entities */,
 				FD0C7A852B4580F700BAAA1E /* Repositories */,
+				FD2B64632B4E8F9300CCAFB9 /* Service */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -268,17 +268,9 @@
 		FD0C7A852B4580F700BAAA1E /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				FD0C7A772B44704600BAAA1E /* DogFactsRemoteRepository.swift */,
+				FD0C7A772B44704600BAAA1E /* DogFactsRepository.swift */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		FD0C7A862B45820D00BAAA1E /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				FD0C7A6C2B446DB700BAAA1E /* DogFactsRepository.swift */,
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		FD0C7A872B4582CF00BAAA1E /* View */ = {
@@ -322,7 +314,6 @@
 			children = (
 				FD0C7A932B46660B00BAAA1E /* Extensions */,
 				FD0C7A912B4664DA00BAAA1E /* ViewControllerFactory.swift */,
-				FDBE15642B4C16B000D9FD31 /* Observable.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -346,7 +337,6 @@
 		FD0C7A992B46C76500BAAA1E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				FD0C7A9D2B46CB7100BAAA1E /* Network */,
 				FD0C7A9A2B46C79A00BAAA1E /* UseCases */,
 			);
 			path = Domain;
@@ -367,6 +357,7 @@
 				FD0C7AA72B46FC0F00BAAA1E /* APIManagerTest.swift */,
 				FD0C7AAB2B46FFFE00BAAA1E /* MockUrlSession.swift */,
 				FDBE156A2B4D196B00D9FD31 /* Request.swift */,
+				FD2B64692B4ECB6100CCAFB9 /* DogFactsAPITest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -395,9 +386,26 @@
 			path = SnapShotTests;
 			sourceTree = "<group>";
 		};
+		FD2B64632B4E8F9300CCAFB9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FD2B64642B4E906200CCAFB9 /* DogFactsService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FD2B64662B4EC74300CCAFB9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FD2B64672B4EC75D00CCAFB9 /* DogFactsServiceTest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		FDBE15682B4CF8AE00D9FD31 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FD2B64662B4EC74300CCAFB9 /* Service */,
 				FDBE15692B4CF8B700D9FD31 /* Repository */,
 			);
 			path = Data;
@@ -406,7 +414,7 @@
 		FDBE15692B4CF8B700D9FD31 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				FDBE15662B4CF8A700D9FD31 /* DogFactsRemoteRepositoryTest.swift */,
+				FDBE15662B4CF8A700D9FD31 /* DogFactsRepositoryTest.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -599,7 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD0C7A7D2B452C6100BAAA1E /* DogFactsAPI+EnvironmentInstanceExtension.swift in Sources */,
-				FD0C7A782B44704600BAAA1E /* DogFactsRemoteRepository.swift in Sources */,
+				FD0C7A782B44704600BAAA1E /* DogFactsRepository.swift in Sources */,
 				FD0C7A352B445C6500BAAA1E /* DogFactsViewController.swift in Sources */,
 				FD0C7A8B2B45844300BAAA1E /* GetDogFactsUseCase.swift in Sources */,
 				FD0C7A312B445C6500BAAA1E /* AppDelegate.swift in Sources */,
@@ -613,14 +621,12 @@
 				FD0C7A622B445C9F00BAAA1E /* APIService.swift in Sources */,
 				FD0C7A952B46662600BAAA1E /* UIViewControllerExtension.swift in Sources */,
 				FD0C7A332B445C6500BAAA1E /* SceneDelegate.swift in Sources */,
+				FD2B64652B4E906200CCAFB9 /* DogFactsService.swift in Sources */,
 				FD0C7A662B446A0200BAAA1E /* APIManager.swift in Sources */,
 				FD0C7AAF2B4701C800BAAA1E /* URLSessionProtocol.swift in Sources */,
-				FD0C7A6B2B446D8500BAAA1E /* DogFactError.swift in Sources */,
-				FD0C7A6D2B446DB700BAAA1E /* DogFactsRepository.swift in Sources */,
 				FD0C7A762B44700100BAAA1E /* DogFactDTO.swift in Sources */,
 				FD0C7A702B446E5000BAAA1E /* Environment.swift in Sources */,
 				FD0C7A722B446E7C00BAAA1E /* DogFactsAPI.swift in Sources */,
-				FDBE15652B4C16B000D9FD31 /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,12 +636,14 @@
 			files = (
 				FD0C7AAC2B46FFFE00BAAA1E /* MockUrlSession.swift in Sources */,
 				FDBE156B2B4D196B00D9FD31 /* Request.swift in Sources */,
-				FDBE15672B4CF8A700D9FD31 /* DogFactsRemoteRepositoryTest.swift in Sources */,
+				FDBE15672B4CF8A700D9FD31 /* DogFactsRepositoryTest.swift in Sources */,
 				FD0C7AA32B46D03F00BAAA1E /* DogFactsViewModelTest.swift in Sources */,
 				FD0C7AA82B46FC0F00BAAA1E /* APIManagerTest.swift in Sources */,
 				FD0C7AA62B46DBFE00BAAA1E /* DogFactsViewControllerSnapshotTest.swift in Sources */,
 				FD0C7A9F2B46CB9D00BAAA1E /* MockResponseManager.swift in Sources */,
 				FD0C7A9C2B46C88E00BAAA1E /* GetDogFactsUseCaseTest.swift in Sources */,
+				FD2B64682B4EC75D00CCAFB9 /* DogFactsServiceTest.swift in Sources */,
+				FD2B646A2B4ECB6100CCAFB9 /* DogFactsAPITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

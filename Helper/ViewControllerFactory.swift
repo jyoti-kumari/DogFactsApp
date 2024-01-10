@@ -11,8 +11,10 @@ class ViewControllerFactory {
     
     static func createDogFactsViewController() -> DogFactsViewController {
        let dogFactsVC: DogFactsViewController = DogFactsViewController.instantiateFromStoryboard(named: .main)
-        let repository = GetDogFactsUseCase(factsRepository: DogFactsRemoteRepository(apiService: APIManager(), api: .dev))
+        let dogService = DogFactsService(apiService: APIManager(), api: .dev)
+        let repository = GetDogFactsUseCase(factsRepository: DogFactsRepository(apiService: dogService))
         dogFactsVC.viewModelProtocol = DogFactsViewModel(dogFactsUseCase: repository)
+        dogFactsVC.viewModelProtocol.outputDelegate = dogFactsVC
         return dogFactsVC
     }
     

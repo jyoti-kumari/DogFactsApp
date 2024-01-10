@@ -1,5 +1,5 @@
 //
-//  DogFactsRemoteRepositoryTest.swift
+//  DogFactsRepositoryTest.swift
 //  DogsFactTests
 //
 //  Created by Jyoti Kumari on 09/01/24.
@@ -9,7 +9,7 @@ import XCTest
 import PromiseKit
 @testable import DogsFact
 
-class DogFactsRemoteRepositoryTest: XCTestCase {
+class DogFactsRepositoryTest: XCTestCase {
     var session: MockURLSession!
     
     override func setUp() {
@@ -28,7 +28,7 @@ class DogFactsRemoteRepositoryTest: XCTestCase {
         
         session.data = """
             {
-                "facts": [
+                "data": [
                     "Puppies then take a year or more to gain the other half of their body weight."
                 ],
                 "success": true
@@ -36,7 +36,8 @@ class DogFactsRemoteRepositoryTest: XCTestCase {
             """.data(using: .utf8)
         
         let sessionManager = APIManager(session: session)
-        let dogFactsRemoteRepo = DogFactsRemoteRepository(apiService: sessionManager, api: .test)
+        let service = DogFactsService(apiService: sessionManager, api: .test)
+        let dogFactsRemoteRepo = DogFactsRepository(apiService: service)
         
         // When
         let expectation = XCTestExpectation(description: "API request")
@@ -60,7 +61,8 @@ class DogFactsRemoteRepositoryTest: XCTestCase {
         session.error = mockError
         
         let sessionManager = APIManager(session: session)
-        let dogFactsRemoteRepo = DogFactsRemoteRepository(apiService: sessionManager, api: .test)
+        let service = DogFactsService(apiService: sessionManager, api: .test)
+        let dogFactsRemoteRepo = DogFactsRepository(apiService: service)
         
         // When
         let expectation = XCTestExpectation(description: "API request")
@@ -83,7 +85,8 @@ class DogFactsRemoteRepositoryTest: XCTestCase {
         session.data = nil
         
         let sessionManager = APIManager(session: session)
-        let dogFactsRemoteRepo = DogFactsRemoteRepository(apiService: sessionManager, api: .test)
+        let service = DogFactsService(apiService: sessionManager, api: .test)
+        let dogFactsRemoteRepo = DogFactsRepository(apiService: service)
         
         // When
         let expectation = XCTestExpectation(description: "API request with no data")
@@ -112,7 +115,8 @@ class DogFactsRemoteRepositoryTest: XCTestCase {
         session.data = mockData
         
         let sessionManager = APIManager(session: session)
-        let dogFactsRemoteRepo = DogFactsRemoteRepository(apiService: sessionManager, api: .test)
+        let service = DogFactsService(apiService: sessionManager, api: .test)
+        let dogFactsRemoteRepo = DogFactsRepository(apiService: service)
         
         // When
         let expectation = XCTestExpectation(description: "API request with decoding error")
@@ -128,13 +132,6 @@ class DogFactsRemoteRepositoryTest: XCTestCase {
         }
         
         wait(for: [expectation], timeout: 1.0)
-    }
-}
-
-// Mock implementations for testing
-extension DogFactsRemoteRepositoryTest {
-    struct MockEnvironment {
-        var api: DogFactsAPI = DogFactsAPI(environment: "" as! Environment)
     }
 }
 

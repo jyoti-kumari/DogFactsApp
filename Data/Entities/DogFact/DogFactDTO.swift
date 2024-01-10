@@ -6,6 +6,12 @@
 //
 
 struct DogFactDTO: Decodable {
-    let facts: [String]
-    let success: Bool
+    let data: [String]
+}
+
+extension DogFactDTO {
+    var toData: DogFactData {
+        return DogFactData(
+            factMessage: data.reduce(into: "", { $0.append(contentsOf: $1) }))
+    }
 }

@@ -9,14 +9,22 @@ import Foundation
 import PromiseKit
 
 protocol DogFactsViewModelProtocol {
-    var factMessage:Observable<String> { get }
-    var errorMessage: Observable<String> { get }
-    func getTitle() -> String
+    var factMessage:String { get }
+    var getTitle: String { get }
     func fetchRandomFact()
     func onUserInput()
+    var outputDelegate: DogFactsViewModelOutput? { get set }
 }
 
+protocol DogFactsViewModelOutput: AnyObject {
+    func handleSuccess()
+    func handleFailure(_ message: String)
+}
+
+
 final class DogFactsViewModel: DogFactsViewModelProtocol {
+    var outputDelegate: DogFactsViewModelOutput?
+    
     
     // MARK: - Dependencies
     
@@ -24,8 +32,9 @@ final class DogFactsViewModel: DogFactsViewModelProtocol {
     
     // MARK: - Properties
     
-    var factMessage:Observable<String> = Observable("")
-    var errorMessage: Observable<String> = Observable("")
+    var factMessage:String = ""
+    var errorMessage: String = ""
+    var getTitle: String { StringConstant.title }
     
     // MARK: - Initialization
     
@@ -35,17 +44,15 @@ final class DogFactsViewModel: DogFactsViewModelProtocol {
     
     // MARK: - Public Methods
     
-    func getTitle() -> String {
-        return NAConstants.title
-    }
-    
     func fetchRandomFact() {
         dogFactsUseCase.execute()
             .done { [weak self] data in
-                self?.factMessage.value = data.factMessage
+                self?.factMessage = data.factMessage
+                self?.outputDelegate?.handleSuccess()
             }
             .catch { error in
-                self.errorMessage.value = error.localizedDescription
+                self.errorMessage = error.localizedDescription
+                self.outputDelegate?.handleFailure(self.errorMessage)
             }
     }
     

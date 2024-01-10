@@ -8,7 +8,8 @@
 import Foundation
 
 extension DogFactsAPI {
-    var factsURL: URL { getURL(path: URLConstants.factsURLKey) }
+    var factsURL: URL { URL(string: URLConstants.baseURL)! }
+    var moreFactsURL: URL { getURL(path: URLConstants.factsURLKey) }
 }
 
 fileprivate extension DogFactsAPI {

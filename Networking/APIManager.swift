@@ -27,12 +27,7 @@ public final class APIManager: ServiceProtocol {
 }
 
 private func buildURL(from service: RequestProtocol) -> URL? {
-    var urlComponents = URLComponents(string: service.requestURL)
-    var query = "apiKey=\(service.apiKey)"
-    if !service.requestQueryParam.isEmpty {
-        query = "\(query)&\(service.requestQueryParam)"
-    }
-    urlComponents?.query = query
+    let urlComponents = URLComponents(string: service.requestURL)
     return urlComponents?.url
 }
 

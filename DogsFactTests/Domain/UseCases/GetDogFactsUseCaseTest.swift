@@ -12,7 +12,7 @@ import PromiseKit
 class GetDogFactsUseCaseTest: XCTestCase {
     
     // Mock DogFactsRepository for testing
-    class MockDogFactsRepository: DogFactsRepository {
+    class MockDogFactsRepository: DogFactsRepositoryProtocol {
         var apiResponse: DogFactData?
         var error: Error?
         func getRandomFact() -> Promise<DogFactData> {

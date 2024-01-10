@@ -1,14 +1,15 @@
 //
-//  DogFactsRemoteRepository.swift
+//  DogFactsService.swift
 //  DogsFact
 //
-//  Created by Jyoti Kumari on 02/01/24.
+//  Created by Jyoti Kumari on 10/01/24.
 //
 
 import Foundation
 import PromiseKit
 
-final internal class DogFactsRemoteRepository: DogFactsRepository {
+
+class DogFactsService {
     
     private let apiService: ServiceProtocol
     private let api: DogFactsAPI
@@ -35,16 +36,5 @@ final internal class DogFactsRemoteRepository: DogFactsRepository {
         dogFactsRequest.requestQueryParam = "country=in"
         dogFactsRequest.requestURL = api.factsURL.absoluteString
         return dogFactsRequest
-    }
-    
-    private static func parse<T: Decodable>(type: T.Type, data: Data) -> T? {
-        return try? JSONDecoder().decode(T.self, from: data)
-    }
-}
-
-extension DogFactDTO {
-    var toData: DogFactData {
-        return DogFactData(
-            factMessage: facts.reduce(into: "", { $0.append(contentsOf: $1) }))
     }
 }

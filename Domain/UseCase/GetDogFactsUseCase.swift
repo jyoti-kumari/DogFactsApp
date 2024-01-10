@@ -13,9 +13,9 @@ protocol GetDogFactsUseCaseProtocol {
 }
 
 class GetDogFactsUseCase: GetDogFactsUseCaseProtocol {
-    private let factsRepository: DogFactsRepository
+    private let factsRepository: DogFactsRepositoryProtocol
     
-    init(factsRepository: DogFactsRepository) {
+    init(factsRepository: DogFactsRepositoryProtocol) {
         self.factsRepository = factsRepository
     }
     

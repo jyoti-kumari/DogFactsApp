@@ -18,7 +18,7 @@ class DogFactsViewController: BaseViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = viewModelProtocol.getTitle()
+        self.title = viewModelProtocol.getTitle
         fetchRandomFact()
     }
     
@@ -26,15 +26,6 @@ class DogFactsViewController: BaseViewController {
     
     private func fetchRandomFact() {
         showLoading()
-        viewModelProtocol.factMessage.bind { [weak self] _ in
-            self?.hideLoading()
-            self?.factTextView.text = self?.viewModelProtocol.factMessage.value
-        }
-        viewModelProtocol.errorMessage.bind { [weak self] error in
-            self?.hideLoading()
-            let errorMessage = self?.viewModelProtocol.errorMessage.value as? String
-            self?.showAlert(title: NAConstants.factsLoadFail, message: errorMessage ?? NAConstants.defaultErrorMessage)
-        }
         viewModelProtocol.fetchRandomFact()
     }
     
@@ -45,3 +36,16 @@ class DogFactsViewController: BaseViewController {
     }
 }
 
+extension DogFactsViewController: DogFactsViewModelOutput {
+    func handleSuccess() {
+        hideLoading()
+        factTextView.text = viewModelProtocol.factMessage
+    }
+    
+    func handleFailure(_ message: String) {
+        hideLoading()
+        showAlert(title: StringConstant.factsLoadFail, message: message)
+    }
+    
+    
+}

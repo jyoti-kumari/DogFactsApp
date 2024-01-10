@@ -84,5 +84,228 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "280FE745-1182-47E2-A9D4-4EA13DC39462"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Networking/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "request(_:responseType:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "280FE745-1182-47E2-A9D4-4EA13DC39462 - b4c54cbd904da58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (PromiseKit.Resolver&lt;&#x3c4;_0_0&gt;) -&gt; () in DogsFact.APIManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: DogsFact.RequestProtocol, responseType: &#x3c4;_0_0.Type) -&gt; PromiseKit.Promise&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "DogsFact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyokumar1/Desktop/Llyods/DogFacts/Networking/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "280FE745-1182-47E2-A9D4-4EA13DC39462 - b4c54cbd904da58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (PromiseKit.Resolver&lt;&#x3c4;_0_0&gt;) -&gt; () in DogsFact.APIManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: DogsFact.RequestProtocol, responseType: &#x3c4;_0_0.Type) -&gt; PromiseKit.Promise&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "DogsFact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyokumar1/Desktop/Llyods/DogFacts/Networking/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE715195-4498-45B0-BD2B-98456F9A0155"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Networking/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "handleResponseData(_:responseType:seal:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AE715195-4498-45B0-BD2B-98456F9A0155 - cb82f541335fa86c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static DogsFact.APIManager.handleResponseData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: Swift.Optional&lt;Foundation.Data&gt;, responseType: &#x3c4;_0_0.Type, seal: PromiseKit.Resolver&lt;&#x3c4;_0_0&gt;) -&gt; ()"
+                  moduleName = "DogsFact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyokumar1/Desktop/Llyods/DogFacts/Networking/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "AE715195-4498-45B0-BD2B-98456F9A0155 - cb82f541335fabda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static DogsFact.APIManager.handleResponseData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: Swift.Optional&lt;Foundation.Data&gt;, responseType: &#x3c4;_0_0.Type, seal: PromiseKit.Resolver&lt;&#x3c4;_0_0&gt;) -&gt; ()"
+                  moduleName = "DogsFact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyokumar1/Desktop/Llyods/DogFacts/Networking/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "AE715195-4498-45B0-BD2B-98456F9A0155 - cb82f541335fa8b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static DogsFact.APIManager.handleResponseData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(_: Swift.Optional&lt;Foundation.Data&gt;, responseType: &#x3c4;_0_0.Type, seal: PromiseKit.Resolver&lt;&#x3c4;_0_0&gt;) -&gt; ()"
+                  moduleName = "DogsFact"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyokumar1/Desktop/Llyods/DogFacts/Networking/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "561CB298-63FB-41E2-936E-7E89A7E46024"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogsFactTests/Network/APIManagerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "testAPIRequestSuccess()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "821A796E-D734-41F4-803E-5DBC9C7EA703"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Networking/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "request(_:responseType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4FC8F5E-AACA-4540-B9E8-DDDED00F1140"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Networking/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "request(_:responseType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A84C1429-B0A6-4B6D-B192-F845743D0165"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogsFactTests/Network/APIManagerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "testAPIRequestSuccess()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A84C1429-B0A6-4B6D-B192-F845743D0165 - c2a3e72267e321a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogsFactTests.APIManagerTest.testAPIRequestSuccess() -&gt; ()"
+                  moduleName = "DogsFactTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyokumar1/Desktop/Llyods/DogFacts/DogsFactTests/Network/APIManagerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1428">
+               </Location>
+               <Location
+                  uuid = "A84C1429-B0A6-4B6D-B192-F845743D0165 - c70d9ef8f39c3be8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (DogsFactTests.APIManagerTest.MockResponse) -&gt; () in DogsFactTests.APIManagerTest.testAPIRequestSuccess() -&gt; ()"
+                  moduleName = "DogsFactTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jyokumar1/Desktop/Llyods/DogFacts/DogsFactTests/Network/APIManagerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19221FAC-C80E-409B-A42E-4F4501399FBC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Networking/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "buildURL(from:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

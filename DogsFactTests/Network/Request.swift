@@ -18,5 +18,5 @@ struct MockRequest: RequestProtocol {
 }
 
 struct DogFactsTestEnvironment: Environment {
-    let baseURL: String = ""
+    let baseURL: String = "https://test.com"
 }
