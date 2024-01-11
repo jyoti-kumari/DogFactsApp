@@ -46,6 +46,4 @@ extension DogFactsViewController: DogFactsViewModelOutput {
         hideLoading()
         showAlert(title: StringConstant.factsLoadFail, message: message)
     }
-    
-    
 }

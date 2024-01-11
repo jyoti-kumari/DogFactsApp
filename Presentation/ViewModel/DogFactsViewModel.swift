@@ -23,7 +23,7 @@ protocol DogFactsViewModelOutput: AnyObject {
 
 
 final class DogFactsViewModel: DogFactsViewModelProtocol {
-    var outputDelegate: DogFactsViewModelOutput?
+    weak var outputDelegate: DogFactsViewModelOutput?
     
     
     // MARK: - Dependencies
